@@ -1,4 +1,5 @@
 # Установка зависимостей проекта
+# uv add --dev ruff # добавить dev зависимость
 install:
 	uv sync
 
@@ -15,6 +16,7 @@ test-coverage:
 	uv run pytest --cov=hexlet_python_package --cov-report xml
 
 # Проверка кода линтером (ruff)
+# or # uv run ruff check brain_games
 lint:
 	uv run ruff check
 
