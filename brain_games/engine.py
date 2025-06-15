@@ -1,4 +1,3 @@
-import sys
 from typing import Callable, Tuple
 
 GAME_ROUNDS = 3
@@ -22,5 +21,4 @@ def run_game(
             print(WRONG_ANSW_MSG.format(user_answer, correct_answer))
             print(f"Let's try again, {user_name}!")
             return 1
-            # correct_answers = 0
     return 0

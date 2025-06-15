@@ -27,14 +27,13 @@ def load_game(game_key: str):
 
 def main():
     game_name = os.path.basename(sys.argv[0])
+    user_name = welcome_user()
 
     if game_name == "brain-games":
-        user_name = welcome_user()
         return
 
-    # Режим запуска игры
     game_rules, generate_round = load_game(game_name)
-    user_name = welcome_user()
+
     print(game_rules)
     game_result = run_game(generate_round, user_name)
     if game_result == 0:
