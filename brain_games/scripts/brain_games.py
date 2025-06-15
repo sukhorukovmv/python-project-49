@@ -1,7 +1,7 @@
 import os
 import sys
 
-from brain_games.cli import welcome_user, welcome
+from brain_games.cli import welcome_user
 from brain_games.engine import run_game
 
 
@@ -9,7 +9,7 @@ def main():
     game_name = os.path.basename(sys.argv[0])
     match game_name:  # Используем match для выбора игры
         case "brain-games":
-            welcome()
+            welcome_user()
             sys.exit(0)
         case "brain-even":
             from brain_games.games.brain_even import GAME_RULES, generate_round
@@ -30,7 +30,6 @@ def main():
             print(f"Available games: {games}")
             sys.exit(1)
 
-    welcome()
     user_name = welcome_user()
     print(GAME_RULES)
     run_game(generate_round, user_name)
