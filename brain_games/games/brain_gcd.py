@@ -4,16 +4,15 @@ from math import gcd
 from prompt import string
 
 GAME_RULES = "Find the greatest common divisor of given numbers."
-MIN_NUMBER = 1
-MAX_NUMBER = 100
+RANGE_NUMBER = (1, 10)
 
 
-def generate_round():
+def generate_round() -> tuple[bool, str, str]:
     """Execute one game round and return if answer was correct."""
     # Словарь операций и их символов
 
-    a = random.randint(MIN_NUMBER, MAX_NUMBER)
-    b = random.randint(MIN_NUMBER, MAX_NUMBER)
+    a = random.randint(*RANGE_NUMBER)
+    b = random.randint(*RANGE_NUMBER)
 
     correct_answer = str(gcd(a, b))
 

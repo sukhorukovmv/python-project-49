@@ -1,6 +1,6 @@
 import random
-from prompt import string
 
+from prompt import string
 
 GAME_RULES = "What number is missing in the progression?"
 PROGRESSION_LENGTH_RANGE = (5, 10)  # Используем кортеж для диапазонов

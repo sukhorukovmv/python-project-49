@@ -14,15 +14,21 @@ def main():
             from brain_games.games.brain_calc import GAME_RULES, generate_round
         case "brain-gcd":
             from brain_games.games.brain_gcd import GAME_RULES, generate_round
+        case "brain-prime":
+            from brain_games.games.brain_prime import GAME_RULES, generate_round
         case "brain-progression":
-            from brain_games.games.brain_progression import GAME_RULES, generate_round
+            from brain_games.games.brain_progression import (
+                GAME_RULES,
+                generate_round,
+            )
         case _:
             print(f"Unknown game: {game_name}")
-            print("Available games: brain_even, brain_calc, brain-gcd, brain_progression")
+            games = "brain_even, brain_calc, brain-gcd, brain_progression, brain_prime"
+            print(f"Available games: {games}")
             sys.exit(1)
 
     print("Welcome to the Brain Games!")
     user_name = welcome_user()
     print(GAME_RULES)
-    run_game(generate_round)
+    run_game(generate_round, user_name)
     print(f"Congratulations, {user_name}!")
