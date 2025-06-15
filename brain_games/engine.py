@@ -21,5 +21,5 @@ def run_game(
             WRONG_ANSW_MSG = "'{}' is wrong answer ;(. Correct answer was '{}'."
             print(WRONG_ANSW_MSG.format(user_answer, correct_answer))
             print(f"Let's try again, {user_name}!")
-            sys.exit(1)
+            return 0
             # correct_answers = 0
