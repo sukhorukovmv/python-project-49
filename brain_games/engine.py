@@ -1,9 +1,12 @@
+import sys
 from typing import Callable, Tuple
 
 GAME_ROUNDS = 3
 
 
-def run_game(generate_round: Callable[[], Tuple[bool, str, str]], user_name: str) -> None:
+def run_game(
+    generate_round: Callable[[], Tuple[bool, str, str]], user_name: str
+) -> None:
     """Run the game main loop."""
 
     correct_answers = 0
@@ -18,4 +21,5 @@ def run_game(generate_round: Callable[[], Tuple[bool, str, str]], user_name: str
             WRONG_ANSW_MSG = "'{}' is wrong answer ;(. Correct answer was '{}'."
             print(WRONG_ANSW_MSG.format(user_answer, correct_answer))
             print(f"Let's try again, {user_name}!")
-            correct_answers = 0
+            sys.exit(1)
+            # correct_answers = 0
