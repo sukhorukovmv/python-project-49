@@ -32,8 +32,8 @@ def main():
 
     user_name = welcome_user()
     print(GAME_RULES)
-    run_game(generate_round, user_name)
-    print(f"Congratulations, {user_name}!")
+    if run_game(generate_round, user_name) == 0:
+        print(f"Congratulations, {user_name}!")
 
 
 if __name__ == "__main__":
