@@ -14,7 +14,6 @@ def generate_round() -> tuple[bool, str, str]:
         "+": operator.add,
         "-": operator.sub,
         "*": operator.mul,
-        "/": operator.truediv,
     }
 
     op_symbol = random.choice(list(operations.keys()))

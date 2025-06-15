@@ -32,7 +32,8 @@ def main():
 
     user_name = welcome_user()
     print(GAME_RULES)
-    if run_game(generate_round, user_name) == 0:
+    game_result = run_game(generate_round, user_name)
+    if game_result == 0:
         print(f"Congratulations, {user_name}!")
 
 
