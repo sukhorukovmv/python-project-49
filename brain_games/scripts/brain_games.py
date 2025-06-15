@@ -28,12 +28,17 @@ def load_game(game_key: str):
 def main():
     game_name = os.path.basename(sys.argv[0])
 
-    game_rules, generate_round = load_game(game_name)
+    if game_name == "brain-games":
+        user_name = welcome_user()
+        return
 
+    # Режим запуска игры
+    game_rules, generate_round = load_game(game_name)
     user_name = welcome_user()
     print(game_rules)
-    run_game(generate_round, user_name)
-    print(f"Congratulations, {user_name}!")
+    game_result = run_game(generate_round, user_name)
+    if game_result == 0:
+        print(f"Congratulations, {user_name}!")
 
 
 if __name__ == "__main__":
