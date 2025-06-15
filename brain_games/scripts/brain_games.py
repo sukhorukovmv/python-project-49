@@ -12,9 +12,13 @@ def main():
             from brain_games.games.brain_even import GAME_RULES, generate_round
         case "brain-calc":
             from brain_games.games.brain_calc import GAME_RULES, generate_round
+        case "brain-gcd":
+            from brain_games.games.brain_gcd import GAME_RULES, generate_round
+        case "brain-progression":
+            from brain_games.games.brain_progression import GAME_RULES, generate_round
         case _:
             print(f"Unknown game: {game_name}")
-            print("Available games: brain_even, brain_calc")  # TODO
+            print("Available games: brain_even, brain_calc, brain-gcd, brain_progression")
             sys.exit(1)
 
     print("Welcome to the Brain Games!")
