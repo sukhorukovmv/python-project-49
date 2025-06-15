@@ -10,7 +10,7 @@ def main():
     match game_name:  # Используем match для выбора игры
         case "brain-game":
             welcome()
-            exit 0
+            sys.exit(0)
         case "brain-even":
             from brain_games.games.brain_even import GAME_RULES, generate_round
         case "brain-calc":
