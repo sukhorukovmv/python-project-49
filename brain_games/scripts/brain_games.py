@@ -8,7 +8,7 @@ from brain_games.engine import run_game
 def main():
     game_name = os.path.basename(sys.argv[0])
     match game_name:  # Используем match для выбора игры
-        case "brain-game":
+        case "brain-games":
             welcome()
             sys.exit(0)
         case "brain-even":
