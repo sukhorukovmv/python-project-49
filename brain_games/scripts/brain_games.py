@@ -1,6 +1,24 @@
+import os
+import sys
+
 from brain_games.cli import welcome_user
+from brain_games.engine import run_game
 
 
 def main():
+    game_name = os.path.basename(sys.argv[0])
+    match game_name:  # Используем match для выбора игры
+        case "brain-even":
+            from brain_games.games.brain_even import GAME_RULES, generate_round
+        case "brain-calc":
+            from brain_games.games.brain_calc import GAME_RULES, generate_round
+        case _:
+            print(f"Unknown game: {game_name}")
+            print("Available games: brain_even, brain_calc")  # TODO
+            sys.exit(1)
+
     print("Welcome to the Brain Games!")
-    welcome_user()
+    user_name = welcome_user()
+    print(GAME_RULES)
+    run_game(generate_round)
+    print(f"Congratulations, {user_name}!")
